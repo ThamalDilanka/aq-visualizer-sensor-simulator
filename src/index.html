@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>AQ Sensor Simulator</title>
+		<link rel="stylesheet" href="index.css" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="script-src 'self' 'unsafe-inline';"
+		/>
+	</head>
+	<body>
+		<div class="toggle-container">
+			<img id="display-image" src="loading-ripple.gif" alt="sending" />
+			<br />
+			<label class="toggle-switch">
+				<input id="toggleSwitch" type="checkbox" checked />
+				<span class="toggle-slider toggle-round"></span>
+			</label>
+			<p id="statusIndicator" class="statusIndicator-active">Activated</p>
+		</div>
+
+		<br />
+
+		<div class="slider-container">
+			<p>Smoke Level</p>
+			<div class="slider-container-left">
+				<div class="slidecontainer">
+					<input
+						type="range"
+						min="0"
+						max="10"
+						value="5"
+						class="slider"
+						id="smokeLevel"
+					/>
+				</div>
+			</div>
+			<div class="slider-container-right">
+				<p><span id="smokeLevelIndicator"></span></p>
+			</div>
+		</div>
+
+		<br /><br />
+
+		<div class="slider-container">
+			<p>CO<sub>2</sub> Level</p>
+			<div class="slider-container-left">
+				<div class="slidecontainer">
+					<input
+						type="range"
+						min="0"
+						max="10"
+						value="5"
+						class="slider"
+						id="co2Level"
+					/>
+				</div>
+			</div>
+			<div class="slider-container-right">
+				<p><span id="co2LevelIndicator"></span></p>
+			</div>
+		</div>
+
+		<br /><br /><br />
+
+		<p id="reading-count-text">
+			<span id="reading-count-value">0</span> Readings has been sent
+		</p>
+
+		<script src="index.js"></script>
+	</body>
+</html>

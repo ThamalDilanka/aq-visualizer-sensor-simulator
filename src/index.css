@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+p {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    color: rgb(58, 58, 58);
+}
+
+.slidecontainer {
+	width: 100%;
+}
+
+.slider {
+	-webkit-appearance: none;
+	width: 100%;
+	height: 1px;
+	border-radius: 5px;
+	background: #069e2c;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
+
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #2366e4;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: #2366e4;
+	cursor: pointer;
+}
+
+.slider-container {
+    width: 100%;
+    margin-top: 10px;
+}
+.slider-container-left {
+    width: 90%;
+    float: left;
+}
+.slider-container-right {
+    width: 10%;
+    float: left;
+    text-align: center;
+}
+
+
+
+.toggle-switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.toggle-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.toggle-slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.toggle-slider:before {
+	position: absolute;
+	content: '';
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .toggle-slider {
+	background-color: #2196f3;
+}
+
+input:focus + .toggle-slider {
+	box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .toggle-slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded toggle-sliders */
+.toggle-slider.toggle-round {
+	border-radius: 34px;
+}
+
+.toggle-slider.toggle-round:before {
+	border-radius: 50%;
+}
+
+.toggle-container {
+    width: 100%;
+    text-align: center;
+}
+
+#statusIndicator {
+    margin-top: 15px;
+}
+
+.statusIndicator-active {
+    color: green;
+}
+
+.statusIndicator-deactive {
+    color: maroon;
+}
+
+#display-image {
+    width: 200px;
+    height: 200px;
+}
+
+#reading-count-text {
+    width: 100%;
+    text-align: center;
+    color: gray;
+    font-size: 12px;
+}
+
+#reading-count-value {
+    width: 12px;
+    height: 12px;
+    color: #2366e4;
+    border-radius: 5px;
+}
