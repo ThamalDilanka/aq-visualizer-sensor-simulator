@@ -13,6 +13,8 @@ const outputCo2 = document.getElementById('co2LevelIndicator');
 const toggleSwitch = document.getElementById('toggleSwitch');
 const statusIndicator = document.getElementById('statusIndicator');
 const displayImage = document.getElementById('display-image');
+const readingCountIndicator = document.getElementById('reading-count-value');
+const sensorIdIndicator = document.getElementById('sensor-id');
 
 let smokeLevel = 5,
 	co2Level = 5,
@@ -20,6 +22,8 @@ let smokeLevel = 5,
 
 outputSmoke.innerHTML = sliderSmoke.value;
 outputCo2.innerHTML = sliderCo2.value;
+
+sensorIdIndicator.innerHTML = sensorId;
 
 sliderSmoke.oninput = function () {
 	outputSmoke.innerHTML = this.value;
@@ -43,6 +47,7 @@ toggleSwitch.addEventListener('change', () => {
 		updateSensorStatus(false);
 	}
 	readingCount = 0;
+	readingCountIndicator.innerHTML = readingCount;
 });
 
 postSensorReading = () => {
@@ -54,16 +59,14 @@ postSensorReading = () => {
 		},
 	}).then((res) => {
 		readingCount++;
+		readingCountIndicator.innerHTML = readingCount;
 		console.log(res);
 	});
 };
 
 updateSensorStatus = (status) => {
 	Axios.patch(endpointUpdateSensor, {
-		sensor: sensorId,
-		reading: {
-			activated: status,
-		},
+		activated: status,
 	}).then((res) => {
 		console.log(res);
 	});
@@ -72,5 +75,6 @@ updateSensorStatus = (status) => {
 setInterval(function () {
 	if (toggleSwitch.checked) {
 		postSensorReading();
+		readingCountIndicator.innerHTML = readingCount;
 	}
-}, 5000);
+}, 30000);

@@ -157,3 +157,10 @@ input:checked + .toggle-slider:before {
     color: #2366e4;
     border-radius: 5px;
 }
+
+#sensor-id {
+	width: 100%;
+	text-align: center;
+	color: #d6d6d6;
+	font-size: 10px;
+}

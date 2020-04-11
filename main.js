@@ -4,7 +4,7 @@ function createWindow() {
 	// Create the browser window.
 	const win = new BrowserWindow({
 		width: 400,
-		height: 510,
+		height: 520,
 		webPreferences: {
 			nodeIntegration: true,
 		},
@@ -18,7 +18,7 @@ function createWindow() {
 
 	win.setResizable(false);
 
-	//win.webContents.openDevTools();
+	win.webContents.openDevTools();
 }
 
 // This method will be called when Electron has finished
