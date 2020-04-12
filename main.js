@@ -3,7 +3,7 @@ const { app, BrowserWindow } = require('electron');
 function createWindow() {
 	// Create the browser window.
 	const win = new BrowserWindow({
-		width: 400,
+		width: 410,
 		height: 520,
 		webPreferences: {
 			nodeIntegration: true,
@@ -16,9 +16,9 @@ function createWindow() {
 	// Hide the menu bar
 	win.setMenuBarVisibility(false);
 
-	win.setResizable(false);
+	win.resizable = false;
 
-	win.webContents.openDevTools();
+	//win.webContents.openDevTools();
 }
 
 // This method will be called when Electron has finished

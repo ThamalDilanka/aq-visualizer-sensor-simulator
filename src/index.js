@@ -15,6 +15,7 @@ const statusIndicator = document.getElementById('statusIndicator');
 const displayImage = document.getElementById('display-image');
 const readingCountIndicator = document.getElementById('reading-count-value');
 const sensorIdIndicator = document.getElementById('sensor-id');
+const rippleImage = document.getElementById('display-ripple');
 
 let smokeLevel = 5,
 	co2Level = 5,
@@ -38,12 +39,14 @@ toggleSwitch.addEventListener('change', () => {
 	if (toggleSwitch.checked) {
 		statusIndicator.innerHTML = 'Activated';
 		statusIndicator.className = 'statusIndicator-active';
+		rippleImage.style.visibility = 'visible'
 		updateSensorStatus(true);
-		displayImage.src = 'activated.gif';
+		displayImage.src = 'sensor-on.png';
 	} else {
 		statusIndicator.innerHTML = 'Disabled';
 		statusIndicator.className = 'statusIndicator-deactive';
-		displayImage.src = 'disconnect.png';
+		rippleImage.style.visibility = 'hidden'
+		displayImage.src = 'sensor-off.png';
 		updateSensorStatus(false);
 	}
 	readingCount = 0;
