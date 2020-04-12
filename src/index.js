@@ -2,7 +2,7 @@ const Axios = require('axios');
 
 const sensorId = 'aqvisualizersensor100';
 
-const proxy = 'https://aq-visualizer.herokuapp.com/';
+const proxy = 'https://fire-alert-solution.herokuapp.com/';
 const endpointAddReading = `${proxy}api/v1/sensorReadings/${sensorId}`;
 const endpointUpdateSensor = `${proxy}api/v1/sensors/${sensorId}`;
 
@@ -39,7 +39,7 @@ toggleSwitch.addEventListener('change', () => {
 		statusIndicator.innerHTML = 'Activated';
 		statusIndicator.className = 'statusIndicator-active';
 		updateSensorStatus(true);
-		displayImage.src = 'loading-ripple.gif';
+		displayImage.src = 'activated.gif';
 	} else {
 		statusIndicator.innerHTML = 'Disabled';
 		statusIndicator.className = 'statusIndicator-deactive';
