@@ -26,6 +26,10 @@ outputCo2.innerHTML = sliderCo2.value;
 
 sensorIdIndicator.innerHTML = sensorId;
 
+displayImage.ondragstart = () => {
+	return false;
+};
+
 sliderSmoke.oninput = function () {
 	outputSmoke.innerHTML = this.value;
 	smokeLevel = this.value;
@@ -39,13 +43,13 @@ toggleSwitch.addEventListener('change', () => {
 	if (toggleSwitch.checked) {
 		statusIndicator.innerHTML = 'Activated';
 		statusIndicator.className = 'statusIndicator-active';
-		rippleImage.style.visibility = 'visible'
+		rippleImage.style.visibility = 'visible';
 		updateSensorStatus(true);
 		displayImage.src = 'sensor-on.png';
 	} else {
 		statusIndicator.innerHTML = 'Disabled';
 		statusIndicator.className = 'statusIndicator-deactive';
-		rippleImage.style.visibility = 'hidden'
+		rippleImage.style.visibility = 'hidden';
 		displayImage.src = 'sensor-off.png';
 		updateSensorStatus(false);
 	}
