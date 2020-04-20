@@ -1,6 +1,6 @@
 const Axios = require('axios');
 
-const sensorId = 'aqvisualizersensor100';
+const sensorId = 'cbeeb1d8-75dc-40d3-a0b5-e0ec3a82cd3b';
 
 const proxy = 'https://fire-alert-solution.herokuapp.com/';
 const endpointAddReading = `${proxy}api/v1/sensorReadings/${sensorId}`;
@@ -79,6 +79,8 @@ updateSensorStatus = (status) => {
 	});
 };
 
+postSensorReading();
+readingCountIndicator.innerHTML = readingCount;
 setInterval(function () {
 	if (toggleSwitch.checked) {
 		postSensorReading();
