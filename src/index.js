@@ -1,6 +1,10 @@
 const Axios = require('axios'); // Importing library that enables to send http requests
 
-const sensorId = 'cbeeb1d8-75dc-40d3-a0b5-e0ec3a82cd3b'; // The unique id of the sensor
+const sensorId = 'ad399a80-a97b-4654-9172-6f7f0cbc30f3'; // The unique id of the sensor 1
+//const sensorId = 'fdb53432-3901-4aae-99c0-f388ad325d56'; // The unique id of the sensor 2
+//const sensorId = 'd4eb52c1-139e-4ac6-a2ee-e5552f0f96c4'; // The unique id of the sensor 3
+//const sensorId = 'e1720832-efab-4f12-a2ac-d08827505c7d'; // The unique id of the sensor 4
+//const sensorId = 'ba92cdb7-420e-4f42-a914-fde77c612e28'; // The unique id of the sensor 5
 
 const proxy = 'https://fire-alert-solution.herokuapp.com/'; // The hosted rest api url
 
@@ -86,7 +90,7 @@ updateSensorStatus = (status) => {
 	});
 };
 
-// Set timing to send readings in every 30 seconds
+// Set timing to send readings in every 10 seconds
 postSensorReading();
 readingCountIndicator.innerHTML = readingCount;
 setInterval(function () {
@@ -94,4 +98,4 @@ setInterval(function () {
 		postSensorReading();
 		readingCountIndicator.innerHTML = readingCount;
 	}
-}, 30000);
+}, 10000);

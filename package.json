@@ -23,11 +23,13 @@
 		"appId": "com.herokuapp.fire-alert-solution.app",
 		"productName": "Fire Alert Sensor",
 		"win": {
-			"target": ["portable"],
+			"target": [
+				"portable"
+			],
 			"icon": "build/icon.png"
 		},
 		"portable": {
-			"artifactName": "Fire Sensor FSID500.exe"
+			"artifactName": "Fire Sensor FSID100.exe"
 		}
 	}
 }
