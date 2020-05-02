@@ -1,0 +1,12 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.herokuapp.fire-alert-solution.app
+productName: Fire Alert Sensor
+win:
+  target:
+    - portable
+  icon: build/icon.png
+portable:
+  artifactName: Fire Sensor FSID400.exe
+electronVersion: 8.2.1
